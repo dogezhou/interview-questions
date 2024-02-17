@@ -3,9 +3,6 @@ import { describe, expect, it } from 'vitest'
 import deepClone from './index'
 
 describe('deep clone', () => {
-    it('is function', () => {
-        expect(deepClone).toBeTypeOf('function')
-    })
     it('can clone basic types', () => {
         expect(deepClone(0)).toBe(0)
         expect(deepClone('')).toBe('')
@@ -50,6 +47,14 @@ describe('deep clone', () => {
             expect(fnCloned.xxx).not.toBe(fn.xxx)
             expect(fnCloned(1, 2)).toBe(3)
             expect(fnCloned(1, 2)).toBe(fn(1, 2))
+        })
+        it('can clone circular object', () => {
+            const a = { name: 'a', self: null}
+            a.self = a
+            const b = deepClone(a)
+            expect(b.self).not.toBe(a)
+            expect(b.self).not.toBe(a.self)
+            expect(b.self).toBe(b)
         })
     })
 })
