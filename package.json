@@ -1,0 +1,15 @@
+{
+  "name": "interview-questions",
+  "version": "1.0.0",
+  "packageManager": "pnpm@8.15.3",
+  "description": "",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "1.3.0"
+  },
+  "keywords": [],
+  "author": "doge.zhou@outlook.com",
+  "license": "ISC"
+}
