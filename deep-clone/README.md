@@ -44,3 +44,13 @@ console.log(b);
     - 数组 array - Array 初始化
     - 函数 function - 拷贝，闭包
     - 日期 Date - how?
+
+### 三、考点
+- 区分类型
+- 避免环
+- 是否拷贝原型属性 不拷贝
+- 爆栈不考虑 不考虑
+
+### 四、缺点
+每一个类型都要单独处理，set, buffer,因为他们的构造函数都不一样，如果只需要 new Object(source) 那就没这个题目了。在实际项目中使用第三方库，Lodash.cloneDeep
+> https://lodash.com/docs/4.17.15#cloneDeep
